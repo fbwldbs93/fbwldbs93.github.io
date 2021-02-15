@@ -30,6 +30,13 @@ function doneDone(e){
         doneTxt.innerText ="you can do it";
     }
 
+    const delPend = done_Array.filter(function(todo){
+        return todo.id !== parseInt(li.id);
+    });
+    done_Array = delPend;
+
+    saveDone();
+
 }
 
 function delDone(e){
@@ -44,6 +51,12 @@ function delDone(e){
         doneTxt.innerText ="you can do it";
     }
     
+    const delPend = done_Array.filter(function(todo){
+        return todo.id !== parseInt(li.id);
+    });
+    done_Array = delPend;
+
+    saveDone();
 }
 
 function saveDone(){
@@ -100,6 +113,13 @@ function delTodo(e){
         doTxt.innerText ="Add to do";
     }
 
+    const delPend = todo_Array.filter(function(todo){
+        return todo.id !== parseInt(li.id);
+    });
+    todo_Array = delPend;
+
+    saveToDos();
+
 }
 
 const welTxt = ["well Done!", "Wonderful", "You are the Best", "I'm proud of you :)", "Wow!", "Great!", "amazing!", "perfect!"];
@@ -143,6 +163,15 @@ function doneTodo(e){
     if(doUl.childElementCount <= 1){
         doTxt.innerText ="Add to do";
     }
+
+
+    const delPend = todo_Array.filter(function(todo){
+        return todo.id !== parseInt(li.id);
+    });
+
+    todo_Array = delPend;
+
+    saveToDos();
 }
 
 
